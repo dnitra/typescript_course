@@ -1,10 +1,15 @@
-function add(n1, n2) {
-    return n1 + n2;
+/**
+ * uknown type still do some checking...
+ * for example weh we try to asign different variable whhich should be specific type to variable with uknown type then error occurs beacuse the the variable with specific type already knows the type it wants
+ *  */
+var userInput;
+var userName;
+userInput = 5;
+userInput = "Max";
+if (typeof userInput === "string") {
+    userName = userInput;
 }
-function printResult(num) {
-    console.log("Result: " + num);
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-printResult(add(5, 10));
-var combineValues;
-combineValues = add;
-console.log(combineValues(8, 8));
+generateError("An error occurred", 500);
